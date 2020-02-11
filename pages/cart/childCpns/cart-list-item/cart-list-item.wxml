@@ -1,0 +1,17 @@
+<!--pages/cart/childCpns/cart-list-item/cart-list-item.wxml-->
+<view class='cart-list-item'>
+  <view class='item-icon'>
+    <w-check-icon bindtap='onCheckClick' data-index="{{index}}" isChecked="{{food.checked}}"/>
+  </view>
+  <view class='item-img'>
+    <image src="{{imgUrl}}{{food.foodItem.cover}}" mode='aspectFill'/>
+  </view>
+  <view class='item-info'>
+    <view class='title'>{{food.foodItem.title}}</view>
+    <view class='desc'>{{food.foodItem.fDesc}}</view>
+    <view class='price-count'>
+      <view class='price'>¥{{food.foodItem.price}}</view>
+      <view class='count'>x{{food.count}}</view>
+    </view>
+  </view>
+</view>

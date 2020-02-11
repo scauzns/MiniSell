@@ -1,0 +1,31 @@
+/* pages/detail/childCpns/w-detail-info/w-detail-info.wxss */
+.detail-info {
+  padding: 18rpx;
+  border-bottom: 12rpx solid #f2f2f2;
+}
+
+.detail-info image {
+  width: 100%
+}
+.detail-info .title {
+  color: #333;
+  font-size: 50rpx
+}
+
+.desc {
+  color: #808080;
+}
+
+.price {
+  font-size: 40rpx;
+  color: #ff5777;
+  margin-left: 10rpx;
+}
+.sell-info {
+  display: flex
+}
+
+.sell-info .sell-info-item {
+  color: #808080;
+  flex: 1
+}

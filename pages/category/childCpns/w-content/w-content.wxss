@@ -1,0 +1,8 @@
+/* pages/category/childCpns/w-content/w-content.wxss */
+.content {
+  height: 100%;
+}
+
+.detail {
+  width: 100%;
+}

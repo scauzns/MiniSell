@@ -1,0 +1,7 @@
+<!--pages/category/childCpns/w-content/w-content.wxml-->
+<!-- 详情数据展示 -->
+<scroll-view class='content' scroll-y>
+  <view class='detail'>
+    <w-goods goodslist="{{categoryDetail}}"/>
+  </view>
+</scroll-view>

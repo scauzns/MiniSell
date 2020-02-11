@@ -1,0 +1,27 @@
+<!--pages/profile/childCpns/w-info/w-info.wxml-->
+<view class='info'>
+  <view class='info-money info-item'>
+    <view>
+      <image src="/assets/images/profile/unpaid.png"/>
+    </view>
+    <view class="info-text">待付款</view>
+  </view>
+  <view class='info-discount info-item'>
+    <view>
+      <image src="/assets/images/profile/unreceived.png"/>
+    </view>
+    <view class="info-text">待收货</view>
+  </view>
+  <view class='info-pointer info-item'>
+    <view>
+      <image src="/assets/images/profile/uncomment.png"/>
+    </view>
+    <view class="info-text">待评价</view>
+  </view>
+  <view class='info-pointer info-item'>
+    <view>
+      <image src="/assets/images/profile/refund.png"/>
+    </view>
+    <view class="info-text">售后</view>
+  </view>
+</view>

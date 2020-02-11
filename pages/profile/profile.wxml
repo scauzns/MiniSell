@@ -1,0 +1,7 @@
+<!--pages/profile/profile.wxml-->
+<view class='profile'>
+  <w-header bind:toLogin="toLogin" bind:toLogout="toLogout" userInfo="{{userInfo}}"/>
+  <w-info/>
+  <w-list-view infos="{{serviceList}}" bind:myAddresses="myAddresses" bind:myOrder="myOrder"/>
+  <w-list-view infos="{{orderList}}"/> 
+</view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "商品详情",
+  "usingComponents": {
+    "w-detail-info": "./childCpns/w-detail-info/w-detail-info",
+    "w-bottom-bar": "./childCpns/w-bottom-bar/w-bottom-bar"
+  }
+}

@@ -1,0 +1,14 @@
+<!--components/w-goods-item/w-goods-item.wxml-->
+<view class='goods-item' bindtap='itemClick'>
+  <image class='image' src="{{imgUrl}}{{goodsitem.cover || goodsitem.image || goodsitem.img || goodsitem.show.img}}"  mode='widthFix'/>
+  <view class='desc-info'>
+    <view class='title'>{{goodsitem.title}}</view>
+    <view class="sell-info">
+      <text class="sell-info-item sales">月销量:100</text>
+      <text class="sell-info-item praiseRate">好评率:99%</text>
+    </view>
+    <view class='info'>
+      <text class='price'>¥{{goodsitem.price}}</text>
+    </view>
+  </view>
+</view>

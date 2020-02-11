@@ -1,0 +1,23 @@
+<!--pages/profile/childCpns/w-header/w-header.wxml-->
+<view class='header'>
+  <view wx:if="{{userInfo  == null}}"  class='avatar'>
+    <image src="/assets/images/profile/avatar.png" bind:tap="toLogin"/>
+  </view>
+  <view wx:else class='avatar'>
+    <image src="{{imgUrl}}{{userInfo.cover}}"/>
+  </view>
+
+  <view class='login-info' >
+    <view wx:if="{{userInfo == null}}" class='login' bind:tap="toLogin">登录/注册</view>
+    <view wx:else class='login'>{{userInfo.name}}</view>
+    <view class='phone'>
+      <image src="/assets/images/profile/phone.png"/>
+      <text wx:if="{{userInfo == null}}" bind:tap="toLogin">暂无绑定手机号</text>
+      <text wx:else>{{userInfo.phone}}</text>
+    </view>
+  </view>
+  <view class='arrow' wx:if="{{userInfo == null}}">
+    <image src="/assets/images/common/arrow-right.png" bind:tap="toLogin"/>
+  </view>
+  <view wx:else class='arrow'><text bind:tap="toLogout">注销</text></view>
+</view>

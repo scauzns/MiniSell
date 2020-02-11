@@ -1,0 +1,9 @@
+/* pages/detail/detail.wxss */
+/* .detail {
+  margin-bottom: 100rpx;
+} */
+.detail-bottom {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
