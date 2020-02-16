@@ -14,7 +14,6 @@ App({
       obj.checked = true
       this.globalData.cartList.push(obj)
     }
-    console.log(this.addCartCallback);
     // 2.购物车回调
     if (this.addCartCallback) {
       this.addCartCallback()
@@ -40,7 +39,8 @@ App({
     wx.removeStorageSync('userInfo');
   },
 
-  fleshCurrentPage: function() {
-
+  cleanCart: function() {
+    //清空购物车
+    this.globalData.cartList.splice(0);
   }
 })

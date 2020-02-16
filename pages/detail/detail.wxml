@@ -2,5 +2,31 @@
 <scroll-view class="detail" scroll-y>
   <w-detail-info foodItem="{{foodItem}}"/>  
 </scroll-view>
-<w-bottom-bar class="detail-bottom" bind:addcart="onAddCart"/>
+<w-bottom-bar class="detail-bottom" bind:addcart="toggleDialog"/>
 
+<!--加入购物车-->
+<import src="../template/template.wxml" />
+<view class="dialog {{ showDialog ? 'dialog--show' : '' }}">
+      <view class="dialog__mask" bindtap="toggleDialog" />
+      <view class="dialog__container">
+        <view class="row">
+          <icon bindtap="closeDialog" class="image-close" type="cancel" size="25"/>
+          <image class="image-sku" src="{{imgUrl}}{{foodItem.cover}}"></image>
+          <view class="column">
+            <text class="sku-price">￥{{foodItem.price}}</text>
+            <text class="sku-title">销量 100 件</text>
+          </view>
+        </view>
+        <text class="border-line"></text>
+        <view class="row">
+          <text >购买数量</text>
+          <view class="quantity-position">
+              <!-- <template is="quantity"  data="{{ ...item,index:index}}" />  -->
+               <template is="quantity" data="{{ ...foodItem,index:1}}" /> 
+          </view>
+        </view>
+        <text class="border-line"></text>
+
+        <button data-goodid="{{foodItem.id}}" class="button-addCar" bindtap="onAddCart" formType="submit">确定</button>
+      </view>
+    </view>

@@ -4,6 +4,8 @@
     <view class='list-item' bindtap="{{item.event}}">
       <image src="/assets/images/profile/{{item.icon}}"/>
       <text>{{item.info}}</text>
+      <image class="more" src = "/assets/images/order/right.png"
+        mode = "widthFix" />
     </view>
   </block>
 </view>

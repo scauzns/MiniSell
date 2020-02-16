@@ -1,12 +1,15 @@
 <scroll-view class="scroll" scroll-y="true">
   <view wx:for="{{addressList}}" wx:key="index">
     <view class="product-name-wrap">
-      <view class="ui-list-item-info">{{item.receiver}}
-        <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text> {{item.phone}}
+      <view class="address-info" bindtap="chooseAddr" data-receiver="{{item.receiver}}" data-phone="{{item.phone}}" data-address="{{item.address}}">
+          <view class="ui-list-item-info">{{item.receiver}}
+            <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text> {{item.phone}}
+          </view>
+          <view class="ui-list-item-address">
+            {{item.address}}
+          </view>
       </view>
-      <view class="ui-list-item-address">
-        {{item.address}}
-      </view>
+      
       <view class="ui-list-item-time">
         <p class="ui-list-item-del" data-id="{{index}}" bindtap="doDelAddress">删除</p>
       </view>

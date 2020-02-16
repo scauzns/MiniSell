@@ -26,3 +26,8 @@
   vertical-align: middle;
   margin-left: 16rpx;
 }
+.more {
+  float: right;
+  margin-top: 30rpx;
+  margin-right: 15rpx;
+}

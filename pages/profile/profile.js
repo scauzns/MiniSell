@@ -37,7 +37,7 @@ Page({
     });
   },
   myAddresses: function(){
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../addressList/addressList',
     })
   },

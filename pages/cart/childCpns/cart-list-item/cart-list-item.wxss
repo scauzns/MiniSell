@@ -1,4 +1,5 @@
 /* pages/cart/childCpns/cart-list-item/cart-list-item.wxss */
+@import "../../../template/template.wxss";
 .cart-list-item {
   display: flex;
   padding: 20rpx;

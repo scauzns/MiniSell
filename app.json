@@ -3,14 +3,13 @@
     "pages/profile/profile",
     "pages/addressList/addressList",
     "pages/newAddress/newAddress",
-    
     "pages/userRegist/regist",
     "pages/userLogin/login",
     "pages/category/category",
     "pages/home/home",
     "pages/cart/cart",
-    "pages/detail/detail"
-    
+    "pages/detail/detail",
+    "pages/confirmOrder/confirmOrder"
   ],
   "window": {
     "backgroundTextStyle": "light",
