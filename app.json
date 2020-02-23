@@ -1,6 +1,9 @@
 {
   "pages": [
+    
     "pages/profile/profile",
+    "pages/comment/comment",
+    "pages/myOrders/myOrders",
     "pages/addressList/addressList",
     "pages/newAddress/newAddress",
     "pages/userRegist/regist",
@@ -9,7 +12,8 @@
     "pages/home/home",
     "pages/cart/cart",
     "pages/detail/detail",
-    "pages/confirmOrder/confirmOrder"
+    "pages/confirmOrder/confirmOrder",
+    "pages/orderDetail/orderDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

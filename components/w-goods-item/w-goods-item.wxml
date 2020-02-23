@@ -4,8 +4,8 @@
   <view class='desc-info'>
     <view class='title'>{{goodsitem.title}}</view>
     <view class="sell-info">
-      <text class="sell-info-item sales">月销量:100</text>
-      <text class="sell-info-item praiseRate">好评率:99%</text>
+      <text class="sell-info-item sales">月销量: {{goodsitem.sales}}</text>
+      <text wx:if="{{goodsitem.comments.length != 0}}" class="sell-info-item praiseRate">好评率: {{goodsitem.praiseRate * 100}}%</text>
     </view>
     <view class='info'>
       <text class='price'>¥{{goodsitem.price}}</text>

@@ -18,6 +18,14 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    goUnpaidOrders: function(){
+      this.triggerEvent("goUnpaidOrders");
+    },
+    goProcessingOrders: function () {
+      this.triggerEvent("goProcessingOrders");
+    },
+    goUncommentOrders: function () {
+      this.triggerEvent("goUncommentOrders");
+    }
   }
 })

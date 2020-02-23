@@ -68,7 +68,7 @@ Page({
         foodTitle: item.foodItem.title,
         foodCover: item.foodItem.cover,
         sellPrice: item.foodItem.price,
-        number: item.count
+        number: item.foodItem.count
       }
       orderDetails.push(detail)
     });

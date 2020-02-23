@@ -1,0 +1,45 @@
+<!--pages/comment/comment.wxml-->
+<scroll-view class="comment" scroll-y>
+  <block wx:for="{{orderDetails}}" wx:key="index">
+    <view class="comment-item">
+      <view class="food-item">
+        <view class='item-img'>
+          <image src="{{imgUrl}}{{item.foodCover}}" mode='aspectFill'/>
+        </view>
+        <view class='item-info'>
+          <view class='title'>{{item.foodTitle}}</view>
+          <view class='price-count'>
+            <view class='price'>¥{{item.sellPrice}}</view>
+            <view class='count'>x{{item.number}}</view>
+          </view>
+        </view>
+      </view>
+
+    <!--服务评价-->
+    <view class="service">
+      <!--评分-->
+      <view class='score'>
+        <view class='left'>
+          评分
+        </view>
+        <view class='right'>
+          <view bindtap="starTap" data-index="{{index}}"  class="star" wx:for="{{item.userStars}}" wx:key="index" wx:for-item="star" data-detailIndex="{{item.detailIndex}}">
+            <image src="{{star}}"></image>
+          </view>
+          <text class='rtxt'>{{item.wjxScore}}.0分</text>
+        </view>
+      </view>
+    </view>
+    <!--textarea-->
+    <view class="conts">
+        <textarea class="areas" placeholder='更多评价请写在这里（最多300字）' minlength="2" maxlength="300" bindinput="commentInput" data-detailIndex="{{item.detailIndex}}"> 
+            <!-- <text class="currentWordNumber">{{currentWordNumber|0}}/{{max}}</text> -->
+        </textarea>
+    </view>
+    </view>
+    
+   </block>
+
+</scroll-view>
+<!--提交评价-->
+  <button class='btn' bindtap='doComment'>提交评价</button>

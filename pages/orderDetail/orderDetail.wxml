@@ -1,0 +1,55 @@
+<!--pages/orderDetail/orderDetail.wxml-->
+<view class="order-detail">
+  <text class="order-id">订单号: {{orderItem.orderId}}</text>
+  <view class="consignee">
+    <view class = "addre2"  style="display:flex; "  >
+      <view class = "left">
+        <view class="left_top">
+          <image src="/assets/images/order/map2.png"  mode = "widthFix"/>
+            {{orderItem.receiver}}　{{orderItem.mobile}}　　　
+        </view>
+        <view class = "left_bottom">
+          地址：{{orderItem.address}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 商品列表 -->
+  <scroll-view class='order-details' scroll-y>
+    <block wx:for="{{orderItem.orderDetails}}" wx:key="index">
+      <view class="order-details-item">
+        <view class='item-img'>
+          <image src="{{imgUrl}}{{item.foodCover}}" mode='aspectFill'/>
+        </view>
+        <view class='item-info'>
+          <view class='title'>{{item.foodTitle}}</view>
+          <view class='price-count'>
+            <view class='price'>¥{{item.sellPrice}}</view>
+            <view class='count'>x{{item.number}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+
+  <!-- 运费、合计 -->
+  <view class="send-cost">
+    <view class="send-cost-item">
+        <view>运费</view>
+        <view>{{orderItem.sendCost}}</view>
+    </view>
+    <view class="send-cost-item">
+        <view>商品优惠</view>
+        <view>0</view>
+    </view>
+    <view class="send-cost-item">
+        <view>交易时间</view>
+        <view>{{orderItem.updateTime}}</view>
+    </view>
+    <view class="Total">
+       合计 <text class="Total_price">￥{{orderItem.totalAmount}}</text>
+    </view>
+  </view>
+
+</view>

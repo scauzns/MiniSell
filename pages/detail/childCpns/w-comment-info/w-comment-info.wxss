@@ -1,1 +1,103 @@
 /* pages/detail/childCpns/w-comment-info/w-comment-info.wxss */
+.comment-info {
+  padding: 50rpx 30rpx;
+  border-bottom: 12rpx solid #f2f2f2;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30rpx;
+  font-size: 32rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.user {
+  margin: 30rpx 0;
+}
+
+.user image {
+  width: 84rpx;
+  height: 84rpx;
+  vertical-align: middle;
+  border-radius: 42rpx;
+} 
+
+.user text {
+  vertical-align: middle;
+  margin-left: 16rpx;
+  font-size: 32rpx;
+  color: #666;
+}
+
+.comment {
+  font-size: 28rpx;
+  text-indent: 1.5em;
+  line-height: 1.5;
+}
+
+.other-info {
+  display: flex;
+  font-size: 24rpx;
+  margin-top: 20rpx;
+  color: #888;
+}
+
+.other-info .time {
+  margin-right: 10rpx;
+}
+
+.picture {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+
+.picture image {
+  max-width: 30%;
+}
+
+.more {
+  padding-right: 50rpx;
+}
+
+.comment-item{
+  border-bottom: 1px solid #ccc;
+  padding: 6rpx;
+}
+
+.score {
+  width: 156rpx;
+  height: 92rpx;
+  display: inline-block;
+}
+
+.comment-time {
+  display: inline-block;
+  width: 300rpx;
+  height: 60rpx;
+  color: #666;
+  margin-left: 155rpx;
+}
+
+.star {
+  float: left;
+  width: 32rpx;
+  height: 32rpx;
+}
+.star image{
+  width: 32rpx;
+  height: 32rpx;
+}
+.score .left {
+  width: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  float: left;
+}
+.score .right {
+  width: 610rpx;
+  font-size: 30rpx;
+  float: left;
+  color: #888;
+}

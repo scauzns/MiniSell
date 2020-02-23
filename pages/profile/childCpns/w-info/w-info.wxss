@@ -12,6 +12,7 @@
   width: 25%;
   background: #fff;
   padding: 30rpx 0;
+  border: 1rpx solid #eee;
 }
 .info-item image {
   width: 50rpx;

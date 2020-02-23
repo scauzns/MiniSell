@@ -1,0 +1,115 @@
+<!--pages/myOrders/myOrders.wxml-->
+
+<!-- 切换栏 -->
+<view class="swiper-tab">
+  <block wx:for="{{swipertab}}" wx:key="sptab">
+    <view class="swiper-tab-list {{currtab == item.index ? 'on' : ''}}" data-current="{{item.index}}" bindtap="tabSwitch">{{item.name}}</view>
+  </block>
+</view>
+ 
+<swiper current="{{currtab}}" class="swiper-box" duration="300" style="height:{{deviceH-31}}px" bindchange="tabChange">
+  <!-- 待付款 -->
+  <swiper-item>
+    <scroll-view class="hot-box" scroll-y="true">
+      <view  class="orderDetails" wx:for="{{unpaidOrderList}}" wx:key="index" data-orderitem="{{item}}" bindtap="orderDetail">
+        <view class="orderListTitle">
+          <text class="orderId">订单号: {{item.orderId}}</text>
+          <text class="orderStatus">未付款</text>
+        </view>
+        <view class="orderListDetails">
+          <block wx:for="{{item.orderDetails}}" wx:for-item="detail" wx:key="index">
+            <scroll-view class="productImg" scroll-x>
+              <image src="{{imgUrl}}{{detail.foodCover}}" background-size="cover"   mode='widthFix'/>
+            </scroll-view>
+          </block>
+        </view>
+        <view class="productCount">
+          <button type="primary" catchtap="goToPay" data-orderid="{{item.orderId}}" data-totalprice="{{item.totalAmount}}">去付款</button>
+          <text class="amount-text">合计：￥{{item.totalAmount}}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view class="hot-box" scroll-y="true">
+      <view  class="orderDetails" wx:for="{{processingOrderList}}" wx:key="index" data-orderitem="{{item}}" bindtap="orderDetail">
+        <view class="orderListTitle">
+          <text class="orderId">订单号: {{item.orderId}}</text>
+          <text class="orderStatus">待处理</text>
+        </view>
+        <view class="orderListDetails">
+          <block wx:for="{{item.orderDetails}}" wx:for-item="detail" wx:key="index">
+            <view class="productImg">
+              <image src="{{imgUrl}}{{detail.foodCover}}" background-size="cover"   mode='widthFix'/>
+            </view>
+          </block>
+        </view>
+        <view class="total-amount">
+          <text >合计：￥{{item.totalAmount}}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view class="hot-box" scroll-y="true">
+      <view  class="orderDetails" wx:for="{{uncommentOrderList}}" wx:key="index" data-orderitem="{{item}}" bindtap="orderDetail">
+        <view class="orderListTitle">
+          <text class="orderId">订单号: {{item.orderId}}</text>
+          <text class="orderStatus">未评价</text>
+        </view>
+        <view class="orderListDetails">
+          <block wx:for="{{item.orderDetails}}" wx:for-item="detail" wx:key="index">
+            <view class="productImg">
+              <image src="{{imgUrl}}{{detail.foodCover}}" background-size="cover"   mode='widthFix'/>
+            </view>
+          </block>
+        </view>
+        <view class="productCount">
+          <button type="primary" catchtap="goToComment" data-orderInfo="{{item}}">去评价</button>
+          <view>
+            <text class="amount-text">合计：￥{{item.totalAmount}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view class="hot-box" scroll-y="true">
+      <view  class="orderDetails" wx:for="{{finishedOrderList}}" wx:key="index" data-orderitem="{{item}}" bindtap="orderDetail">
+        <view class="orderListTitle">
+          <text class="orderId">订单号: {{item.orderId}}</text>
+          <text class="orderStatus">已完成</text>
+        </view>
+        <view class="orderListDetails">
+          <block wx:for="{{item.orderDetails}}" wx:for-item="detail" wx:key="index">
+            <view class="productImg">
+              <image src="{{imgUrl}}{{detail.foodCover}}" background-size="cover"   mode='widthFix'/>
+            </view>
+          </block>
+        </view>
+        <view class="total-amount">
+          <text>合计：￥{{item.totalAmount}}</text>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>
+
+<view class="dialog {{ showDialog ? 'dialog--show' : '' }}">
+      <view class="dialog__mask" bindtap="toggleDialog" />
+      <view class="dialog__container">
+        <view class="row">
+          <icon bindtap="closeDialog" class="image-close" type="cancel" size="25"/>
+          <view class="column">
+            <text class="pay-text">支付</text>
+          </view>
+        </view>
+        <text class="border-line"></text>
+        <view class="row">
+          <text class="order-price">￥{{payInfo.totalPrice}}</text>
+        </view>
+        <text class="border-line"></text>
+
+        <button  class="button-doPay" type="primary" bindtap="_payOrder">确定支付</button>
+      </view>
+</view>

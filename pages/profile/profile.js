@@ -42,6 +42,24 @@ Page({
     })
   },
   myOrder: function(){
-    console.log('订单')
+    wx.navigateTo({
+      url: '../myOrders/myOrders',
+    })
+  },
+   goUnpaidOrders: function () {
+     wx.navigateTo({
+       url: '../myOrders/myOrders?currtab=0',
+     })
+  },
+  goProcessingOrders: function () {
+    wx.navigateTo({
+      url: '../myOrders/myOrders?currtab=1',
+    })
+  },
+  goUncommentOrders: function () {
+    wx.navigateTo({
+      url: '../myOrders/myOrders?currtab=2',
+    })
   }
+
 })

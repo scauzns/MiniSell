@@ -12,7 +12,6 @@ Page({
   data: {
     id: '',
     foodItem: {},
-    foodComment: [],
     showDialog: false,
     imgUrl: app.imgUrl
   },
@@ -34,6 +33,21 @@ Page({
       const foodItem = res.data;
       // 默认数量为1
       foodItem.count = 1;
+      // 商品评分图片加载
+      var comments = foodItem.comments;
+      for(var i=0; i<comments.length; i++){
+        var userStars = [];
+        var starNum = comments[i].star;
+        for(var j=0; j<5; j++){
+          if(j<starNum){
+            userStars.push("/assets/images/comment/kx.png");
+          }else{
+            userStars.push("/assets/images/comment/tx.jpg");
+          }
+        }
+        comments[i].userStars = userStars;
+      }
+      // foodItem.comments = comments;
       this.setData({
         foodItem
       })
@@ -88,7 +102,6 @@ Page({
     const obj = {};
     obj.id = this.data.id;
     obj.foodItem = this.data.foodItem;
-    obj.foodComment = this.data.foodComment;
     // 2.加入到购物车列表
     app.addToCart(obj);
     // 3.加入成功提示

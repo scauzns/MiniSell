@@ -1,2 +1,41 @@
 <!--pages/detail/childCpns/w-comment-info/w-comment-info.wxml-->
-<text>pages/detail/childCpns/w-comment-info/w-comment-info.wxml</text>
+<scroll-view class='comment-info' scroll-y wx:if="{{comments.length !=0 ? true : false}}">
+  <view class='header'>
+    <view>用户评价</view>
+    <view class="more">更多>></view>
+  </view>
+  <block wx:for="{{comments}}" wx:key="index">
+    <view class="comment-item">
+      <view class='user'>
+        <image src="{{imgUrl}}{{item.userCover}}"/>
+        <!--评分-->
+        <view class='score'>
+          <text>{{item.userName}}</text>
+          <view class='right'>
+            <view class="star" wx:for="{{item.userStars}}" wx:key="index" wx:for-item="star">
+              <image src="{{star}}"></image>
+            </view>
+          </view>
+          
+        </view>
+        <view class="comment-time">{{item.createTime}}</view>
+      </view>
+      <view class='comment'>
+        {{item.content}}
+      </view>
+    </view>
+  </block>
+  
+  
+  <!-- <view class='other-info'>
+    <view class='time'>{{commentInfo.created}}</view>
+    <view class='style'>{{commentInfo.style}}</view>
+  </view>
+  <view class='picture'>
+    <block wx:for="{{commentInfo.images}}" 
+           wx:key="index">
+      <image src="{{item}}" mode="widthFix"/>
+    </block>
+  </view> -->
+</scroll-view>
+<view style="height:120rpx;"></view>

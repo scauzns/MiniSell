@@ -1,18 +1,18 @@
 <!--pages/profile/childCpns/w-info/w-info.wxml-->
 <view class='info'>
-  <view class='info-money info-item'>
+  <view class='info-money info-item' bindtap="goUnpaidOrders">
     <view>
       <image src="/assets/images/profile/unpaid.png"/>
     </view>
     <view class="info-text">待付款</view>
   </view>
-  <view class='info-discount info-item'>
+  <view class='info-discount info-item' bindtap="goProcessingOrders">
     <view>
       <image src="/assets/images/profile/unreceived.png"/>
     </view>
-    <view class="info-text">待收货</view>
+    <view class="info-text">待处理</view>
   </view>
-  <view class='info-pointer info-item'>
+  <view class='info-pointer info-item' bindtap="goUncommentOrders">
     <view>
       <image src="/assets/images/profile/uncomment.png"/>
     </view>

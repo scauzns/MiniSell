@@ -17,3 +17,16 @@ export function payOrder(orderId, payMoney) {
     }
   })
 }
+
+// 订单状态：1 未支付，2 已支付、待受理，3 已完成，4 失效
+export function getOrderList(userId, status, page, limit) {
+  return request({
+    url: '/orderService/orderList',
+    data: {
+      userId,
+      status,
+      page,
+      limit
+    }
+  })
+}

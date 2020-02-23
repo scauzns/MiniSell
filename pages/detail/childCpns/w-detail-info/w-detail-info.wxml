@@ -5,10 +5,9 @@
   <view class="desc">{{foodItem.fDesc}}</view>
   <view class="price">￥{{foodItem.price}}</view>
   <view class="sell-info">
-    <view class="sell-info-item sales">月销量：100</view>
-    <view class="sell-info-item praiseRate">好评率：99%</view>
-    <!-- <view class="sales">100</view>
-    <view class="praiseRate">99%</view> -->
+    
+    <view wx:if="{{foodItem.comments.length != 0}}" class="sell-info-item praiseRate">好评率: {{foodItem.praiseRate * 100}}%</view>
+    <view class="sell-info-item sales">月销量: {{foodItem.sales}}</view>
   </view>
 </view>
 
