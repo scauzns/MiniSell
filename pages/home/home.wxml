@@ -1,2 +1,8 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<view class="home">
+  <!-- 搜索栏 -->
+  <w-search-bar bind:wxSearchInput="wxSearchInput"/>
+
+  
+
+</view>

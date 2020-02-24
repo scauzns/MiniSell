@@ -1,0 +1,9 @@
+<!--pages/searchDetails/searchDetails.wxml-->
+<scroll-view class='searchDetails' scroll-y>
+  <view class='detail' wx:if="{{foodList.length != 0}}">
+    <w-goods goodslist="{{foodList}}"/>
+  </view>
+  <view class='detail' wx:else>
+    没有搜到您想要的佳肴哦！
+  </view>
+</scroll-view>

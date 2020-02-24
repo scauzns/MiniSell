@@ -37,7 +37,7 @@ Page({
     finishedPage: 1,
     finishedTotalPage: 1,
 
-    userId: app.getGlobalUserInfo().id,
+    userId: null,
     payInfo: {}
   },
 
@@ -45,6 +45,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      userId : app.getGlobalUserInfo().id
+    });
     // 打开某个tab
     if (typeof (options) != "undefined" && options.currtab){
       this.setData({

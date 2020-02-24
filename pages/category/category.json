@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "w-menu": "./childCpns/w-menu/w-menu",
-    "w-content": "./childCpns/w-content/w-content"
+    "w-content": "./childCpns/w-content/w-content",
+    "w-search-bar": "/components/w-search-bar/w-search-bar"
   },
   "navigationBarTitleText": "商品分类"
 }

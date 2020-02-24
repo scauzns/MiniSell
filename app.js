@@ -6,11 +6,13 @@ App({
   },
   addToCart(obj) {
     // 1.判断是否已经添加进来
+    console.log(obj);
+    console.log(this.globalData.cartList);
     const oldInfo = this.globalData.cartList.find((item) => item.id === obj.id)
+    console.log(oldInfo);
     if (oldInfo) {
-      oldInfo.count += 1
+      oldInfo.foodItem.count += 1
     } else {
-      obj.count = 1
       obj.checked = true
       this.globalData.cartList.push(obj)
     }

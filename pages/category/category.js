@@ -79,5 +79,10 @@ Page({
 
     // 2.请求对应的currentIndex的详情数据
     this._getCategoryDetail(currentIndex)
+  },
+  wxSearchInput: function () {
+    wx.navigateTo({
+      url: '../search/search',
+    })
   }
 })

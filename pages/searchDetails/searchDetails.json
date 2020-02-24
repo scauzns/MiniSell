@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "搜索结果",
+  "usingComponents": {
+    "w-goods": "/components/w-goods/w-goods"
+  }
+}
