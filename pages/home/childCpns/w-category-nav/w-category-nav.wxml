@@ -1,0 +1,9 @@
+<!--pages/home/childCpns/w-category-nav.wxml-->
+<view class='nav'>
+  <block wx:for="{{navList}}" wx:key="index">
+    <view class='nav-item' data-currentIndex="{{item.currentIndex}}" bindtap="foodNav">
+      <image src="{{item.image}}" />
+      <view><text>{{item.title}}</text></view>
+    </view>
+  </block>
+</view>

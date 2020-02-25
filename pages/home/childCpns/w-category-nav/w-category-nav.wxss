@@ -1,0 +1,21 @@
+/* pages/home/childCpns/w-category-nav.wxss */
+.nav {
+  display: flex;
+  margin-top: 40rpx;
+  padding-bottom: 40rpx;
+  border-bottom: 16rpx solid #eee;
+}
+
+.nav-item {
+  flex: 1;
+  text-align: center;
+}
+
+.nav-item image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.nav-item text {
+  font-size: 28rpx;
+}

@@ -14,3 +14,13 @@ export function getCategoryDetail(cId) {
     }
   })
 }
+
+export function getFoodRange(type, top) {
+  return request({
+    url: '/foodService/getFoodRange',
+    data: {
+      type,
+      top
+    }
+  })
+}

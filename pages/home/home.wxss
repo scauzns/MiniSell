@@ -1,1 +1,13 @@
 /* pages/home/home.wxss */
+.hot-bar{
+  height: 115rpx;
+  border-bottom: 1rpx dashed #eee;
+}
+.hot-bar image {
+  width: 110rpx;
+}
+.hot-bar text {
+  color: red;
+  height: 115rpx;
+  line-height: 115rpx;
+}

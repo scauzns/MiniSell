@@ -4,6 +4,8 @@ import {
   getCategoryDetail
 } from '../../service/category.js'
 
+const app = getApp();
+
 Page({
 
   /**
@@ -21,6 +23,18 @@ Page({
    */
   onLoad: function (options) {
     this._getData()
+  },
+  onShow: function(){
+    //从首页分类导航跳转过来
+    if (app.globalData.currentIndex) {
+      var currentIndex = app.globalData.currentIndex;
+      this.setData({
+        currentIndex: currentIndex
+      });
+      this._getCategoryDetail(currentIndex)
+      app.globalData.currentIndex = null;
+    }
+    
   },
   _getData() {
     // 1.请求分类数据
@@ -46,7 +60,7 @@ Page({
       })
 
       // 4.请求第一个类别的详情数据
-      this._getCategoryDetail(0)
+      this._getCategoryDetail(this.data.currentIndex)
     })
   },
   _getCategoryDetail(currentIndex) {

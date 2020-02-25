@@ -171,13 +171,13 @@ Page({
       if(res.code == 0){
         this._clearCartList();
         wx.showToast({
-          title: res.msg,
+          title: '支付成功',
           icon: 'success',
           duration: 2000
         })
         setTimeout(function () {
           wx.reLaunch({
-            url: '../profile/profile',
+            url: '../home/home',
           })
         }, 2000)
       }else{

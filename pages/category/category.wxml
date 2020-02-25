@@ -4,6 +4,6 @@
 <view class='category'>
   
   <w-menu categories="{{categories}}"
-          bind:menuclick="menuClick"/>
+          bind:menuclick="menuClick" currentIndex="{{currentIndex}}"/>
   <w-content categoryDetail="{{categoryData[currentIndex].categoryDetail}}"/>
 </view>

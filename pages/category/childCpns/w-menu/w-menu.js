@@ -6,6 +6,9 @@ Component({
   properties: {
     categories: {
       type: Array
+    },
+    currentIndex: {
+      type: Number
     }
   },
 
@@ -13,7 +16,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    currentIndex: 0
+    // currentIndex: 0
   },
 
   /**
@@ -23,9 +26,9 @@ Component({
     onItemClick(e) {
       // 1.改变当前的currentIndex
       const currentIndex = e.currentTarget.dataset.index;
-      this.setData({
-        currentIndex
-      })
+      // this.setData({
+      //   currentIndex
+      // })
 
       // 2.将最新的currentIndex传递到分类页面
       this.triggerEvent('menuclick', { currentIndex }, {})

@@ -46,7 +46,15 @@ Component({
       app.changeFoodsState(index, food)
     },
     delCount(e) {
-
+      // 1.查找到对应的商品
+      const food = app.globalData.cartList.find(item => item.id == this.properties.food.id);
+      // 2.获取当前商品的index
+      const index = e.currentTarget.dataset.index;
+      // 3.数量-1
+      if (food.foodItem.count > 1){
+        food.foodItem.count--;
+      }
+      app.changeFoodsState(index, food)
     }
   }
 })
