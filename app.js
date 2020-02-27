@@ -1,6 +1,6 @@
 //app.js
 App({
-  imgUrl: "http://192.168.88.104:8060",
+  imgUrl: "http://192.168.88.104:8066",
   userInfo: null,
   onLaunch: function () {
   },

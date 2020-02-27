@@ -37,7 +37,7 @@ Page({
           title: '请等待...',
         });
         wx.request({
-          url: baseURL + '/userService/regist',
+          url: baseURL + '/userService/user/register',
           method: "POST",
           data: formObject,
           header: {
@@ -86,7 +86,7 @@ Page({
           })
 
           wx.uploadFile({
-            url: baseURL + '/userService/uploadUserImg',
+            url: baseURL + '/userService/user/upload/img',
             // url: serverUrl + '/user/uploadFace?userId=' + userInfo.id,  //app.userInfo.id,
             filePath: tempFilePaths[0],
             name: 'file',

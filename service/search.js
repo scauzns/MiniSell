@@ -2,13 +2,13 @@ import request from './network.js'
 
 export function getHotSearch() {
   return request({
-    url: '/userService/hotSearch'
+    url: '/userService/user/hotSearch'
   })
 }
 
 export function getSearchFoodList(content) {
   return request({
-    url: '/foodService/getFoodList',
+    url: '/foodService/food/list',
     data: {
       title: content
     }
@@ -17,7 +17,7 @@ export function getSearchFoodList(content) {
 
 export function addUserSearch(content) {
   return request({
-    url: '/userService/userSearch',
+    url: '/userService/user/search',
     data: {
       content
     }

@@ -4,9 +4,9 @@ import {
 } from './config.js'
 
 function request(options) {
-  wx.showLoading({
-    title: '数据加载中ing',
-  })
+  // wx.showLoading({
+  //   title: '数据加载中ing',
+  // })
 
   return new Promise((resolve, reject) => {
     wx.request({
@@ -19,7 +19,7 @@ function request(options) {
       },
       fail: reject,
       complete: res => {
-        wx.hideLoading()
+        // wx.hideLoading()
       }
     })
   })

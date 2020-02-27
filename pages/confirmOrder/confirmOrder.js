@@ -12,7 +12,7 @@ Page({
    */
   data: {
     orderDetails: [],
-    userInfo: app.getGlobalUserInfo(),
+    userInfo: null,
     imgUrl: app.imgUrl,
     totalPrice: 0,
     addressInfo: null,
@@ -25,11 +25,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var userInfo = app.getGlobalUserInfo();
     var orderDetails = JSON.parse(options.orderDetails);
     var totalPrice = options.totalPrice;
     this.setData({
       orderDetails: orderDetails,
-      totalPrice: totalPrice
+      totalPrice: totalPrice,
+      userInfo: userInfo
     })
   },
 

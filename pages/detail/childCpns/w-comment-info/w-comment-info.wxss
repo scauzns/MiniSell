@@ -77,7 +77,7 @@
   width: 300rpx;
   height: 60rpx;
   color: #666;
-  margin-left: 155rpx;
+  margin-left: 145rpx;
 }
 
 .star {

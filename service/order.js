@@ -2,7 +2,7 @@ import request from './network.js'
 
 export function commitOrder(orderVO) {
   return request({
-    url: '/orderService/commitOrder',
+    url: '/orderService/order/commitOrder',
     method: "POST",
     data: orderVO
   })
@@ -10,7 +10,7 @@ export function commitOrder(orderVO) {
 
 export function payOrder(orderId, payMoney) {
   return request({
-    url: '/orderService/payOrder',
+    url: '/orderService/order/payOrder',
     data: {
       orderId,
       payMoney
@@ -21,7 +21,7 @@ export function payOrder(orderId, payMoney) {
 // 订单状态：1 未支付，2 已支付、待受理，3 已完成，4 失效
 export function getOrderList(userId, status, page, limit) {
   return request({
-    url: '/orderService/orderList',
+    url: '/orderService/order/orderList',
     data: {
       userId,
       status,

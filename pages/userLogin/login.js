@@ -41,7 +41,7 @@ Page({
       });
       // 调用后端
       wx.request({
-        url: baseURL + '/userService/login',
+        url: baseURL + '/userService/user/login',
         method: "POST",
         data: {
           name: username,

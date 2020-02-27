@@ -12,7 +12,7 @@ Page({
   data: {
     imgUrl: app.imgUrl,
     orderDetails: null,
-    userInfo: app.getGlobalUserInfo(),
+    userInfo: null,
     orderId: null
   },
 
@@ -20,6 +20,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var userInfo = app.getGlobalUserInfo();
     var orderInfo = JSON.parse(options.orderInfo);
     var orderId = orderInfo.orderId;
     var orderDetails = orderInfo.orderDetails;
@@ -35,7 +36,8 @@ Page({
     }
     this.setData({
       orderId: orderId,
-      orderDetails: orderDetails
+      orderDetails: orderDetails,
+      userInfo: userInfo
     });
   },
 
